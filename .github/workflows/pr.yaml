@@ -38,7 +38,7 @@ jobs:
     - name: Publish container image
       run: |
         docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
-        ./hack/docker-push.sh
+        REGISTRY=blackpiglet ./hack/docker-push.sh
 
     - name: Make CI
       run: make ci
